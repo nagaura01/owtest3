@@ -33,6 +33,7 @@ jobs:
       # makeするわよ
       - name: make
         run: |
+          cd openwrt-23.05.5/
           echo "準備完了。いくわよ！"
           make -j$(nproc)
 
