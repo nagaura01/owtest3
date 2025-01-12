@@ -25,8 +25,8 @@ jobs:
       # feedsをなんとかする
       - name: feeds
         run: |
-          mv config v23.05.5/.config
-          cd v23.05.5/
+          mv config openwrt-23.05.5/.config
+          cd openwrt-23.05.5/
           ./scripts/feeds update -a
           ./scripts/feeds install -a
 
@@ -42,4 +42,4 @@ jobs:
         with:
           name: image
           path: |
-            ${{ github.workspace }}/v23.05.5/bin
+            ${{ github.workspace }}/openwrt-23.05.5/bin
