@@ -19,14 +19,14 @@ jobs:
       - name: Source
         run: |
           wget https://github.com/openwrt/openwrt/archive/refs/tags/v23.05.5.tar.gz
-          tar xzvf openwrt-23.05.5.tar.gz
-          rm openwrt-23.05.5.tar.gz
+          tar xzvf v23.05.5.tar.gz
+          rm v23.05.5.tar.gz
 
       # feedsをなんとかする
       - name: feeds
         run: |
-          mv config openwrt-23.05.5/.config
-          cd openwrt-23.05.5/
+          mv config v23.05.5/.config
+          cd v23.05.5/
           ./scripts/feeds update -a
           ./scripts/feeds install -a
 
@@ -42,4 +42,4 @@ jobs:
         with:
           name: image
           path: |
-            ${{ github.workspace }}/openwrt-23.05.5/bin
+            ${{ github.workspace }}/v23.05.5/bin
